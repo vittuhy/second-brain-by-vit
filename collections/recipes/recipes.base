@@ -1,0 +1,41 @@
+filters:
+  and:
+    - file.inFolder("collections/recipes")
+    - file.ext == "md"
+properties:
+  time_min:
+    displayName: Minutes
+  cuisine:
+    displayName: Cuisine
+  servings:
+    displayName: Servings
+  rating:
+    displayName: Rating
+  tried:
+    displayName: Tried
+views:
+  - type: table
+    name: All recipes
+    order:
+      - file.name
+      - cuisine
+      - time_min
+      - servings
+      - rating
+      - tried
+  - type: table
+    name: Quick and proven
+    filters:
+      and:
+        - time_min <= 30
+        - tried == true
+    order:
+      - file.name
+      - time_min
+      - rating
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - cuisine
+      - rating

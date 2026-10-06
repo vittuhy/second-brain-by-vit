@@ -1,0 +1,23 @@
+filters:
+  and:
+    - file.inFolder("collections/places")
+    - file.ext == "md"
+views:
+  - type: table
+    name: All places
+    order:
+      - file.name
+      - city
+      - country
+      - kind
+      - visited
+      - rating
+  - type: table
+    name: Want to visit
+    filters:
+      and:
+        - visited == false
+    order:
+      - file.name
+      - city
+      - kind

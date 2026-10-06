@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.inFolder("collections/books")
+    - file.ext == "md"
+properties:
+  author:
+    displayName: Author
+  status:
+    displayName: Status
+views:
+  - type: table
+    name: Want to read
+    filters:
+      and:
+        - status == "want"
+    order:
+      - file.name
+      - author
+      - year
+  - type: table
+    name: Read
+    filters:
+      and:
+        - status == "done"
+    order:
+      - file.name
+      - author
+      - rating
+      - finished

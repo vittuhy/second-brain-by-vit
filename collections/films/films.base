@@ -1,0 +1,44 @@
+filters:
+  and:
+    - file.inFolder("collections/films")
+    - file.ext == "md"
+properties:
+  year:
+    displayName: Year
+  director:
+    displayName: Director
+  genre:
+    displayName: Genre
+  status:
+    displayName: Status
+  rating:
+    displayName: My rating
+  external_rating:
+    displayName: External rating
+views:
+  - type: table
+    name: Want to watch
+    filters:
+      and:
+        - status == "want"
+    order:
+      - file.name
+      - year
+      - director
+      - genre
+      - external_rating
+  - type: table
+    name: Watched
+    filters:
+      and:
+        - status == "seen"
+    order:
+      - file.name
+      - year
+      - rating
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - year
+      - rating

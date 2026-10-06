@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "type": "file", "path": "context/tasks.md" },
+    { "type": "file", "path": "context/now.md" },
+    { "type": "file", "path": "context/open-questions.md" }
+  ]
+}

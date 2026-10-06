@@ -1,0 +1,18 @@
+# Obsidian per-device state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
+.obsidian/appearance.json
+.trash/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Never commit secrets that unlock something (see docs/privacy.md)
+.env
+*.pem
+*.key
+
+# Python bytecode
+__pycache__/
